@@ -3,7 +3,7 @@ BIT - [interpreted programming language](https://en.wikipedia.org/wiki/Interpret
 is [currently under development](https://en.wikipedia.org/wiki/Work_in_process) for [recreational](https://en.wikipedia.org/wiki/Recreation) purposes 
 and does not meant to be used in production.
 
-## Currently supported operation:
+## Currently supported operations:
   * Nothing, just tokenization
 
 ## To try it:

@@ -1,14 +1,24 @@
+#include <stdio.h>
+
 #include "vm.h"
+#include "lex.h"
+#include "utils.h"
 
-int main() {
+int main(int argc, char* argv[]) {
 
-    push(10);
-    push(20);
-    push(30);
-    add(OP(OP_ADD, PREC_TERM));
-    add(OP(OP_ADD, PREC_TERM));
-    add(OP(OP_PUT, PREC_CALL));
+    shift(&argc, &argv);
 
-    run();
+    char* exp = shift(&argc, &argv);
+    printf("[EXP]: %s\n", exp);
+    printf("====================\n");
+    lex_set(exp);
+
+    Token token = lex_next();
+
+    while(token.type != TOKEN_EOF) {
+        token_print(token);
+        token = lex_next();
+    }
+
     return 0;
 }
